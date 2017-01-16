@@ -296,7 +296,7 @@ Parse.Cloud.beforeSave("Users", function(request, response)
  
                        var newUserEmail = request.object.get("email").toLowerCase();
                        var emailParts = newUserEmail.split("@");
-                                             var emailLeftPart = emailParts[0];
+                       var emailLeftPart = emailParts[0];
                        var userDomain = emailParts[1];
  
                                              var hashed_email = jssha.HMAC_SHA256_MAC("asdqweasd", emailLeftPart);
@@ -393,7 +393,7 @@ Parse.Cloud.beforeSave("Users", function(request, response)
                                                });
                                 },
                                 error: function(error) {
-                                   response.error("try again 3");
+                                   response.error(error.code + ":" + error.message + " try again 3");
                                    return;
  
                                 }
