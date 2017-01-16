@@ -1,4 +1,4 @@
-var jssha = require('cloud/jssha256.js');
+var jssha = require('./jssha256.js');
  
 Parse.Cloud.job("DeleteMellanoxLog", function(request, response) {
  
